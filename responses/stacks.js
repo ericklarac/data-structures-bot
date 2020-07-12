@@ -152,7 +152,7 @@ const example = (param) => {
 				payload: {
 					telegram: {
 						parse_mode: 'Markdown',
-						text: 'Still working on ' + s,
+						text: s + ' section is under development',
 					},
 				},
 			},
