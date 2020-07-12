@@ -39,7 +39,6 @@ const code_response = (host) => {
 				platform: 'TELEGRAM',
 				payload: {
 					telegram: {
-						parse_mode: 'Markdown',
 						text: host + '/stack.png',
 					},
 				},

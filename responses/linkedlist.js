@@ -71,7 +71,6 @@ const code_response = (host) => {
 				platform: 'TELEGRAM',
 				payload: {
 					telegram: {
-						parse_mode: 'Markdown',
 						text: host + '/linked-list-node.png',
 					},
 				},
