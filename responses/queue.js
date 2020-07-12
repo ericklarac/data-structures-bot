@@ -124,4 +124,4 @@ const description_response_2 = {
 	outputContexts: [],
 };
 
-module.exports = { queue_switch };
+export { queue_switch };

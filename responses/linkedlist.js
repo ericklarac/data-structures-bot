@@ -1,5 +1,3 @@
-var fs = require('fs');
-
 const linkedlist_switch = (datastructure, selector) => {
 	switch (selector) {
 		case 'image':
@@ -51,8 +49,6 @@ const problem_response = {
 const node =
 	'```python class ListNode:\n\tdef __init__(self, value):\n\t\tself.value = value\n\t\tself.next = None```';
 
-const image = fs.open('../public/linked-list-node.png', 'r', () => {});
-
 const implementation_response = {
 	fulfillmentMessages: [
 		{
@@ -60,7 +56,7 @@ const implementation_response = {
 			payload: {
 				telegram: {
 					parse_mode: 'Markdown',
-					text: image,
+					text: '../public/linked-list-node.png',
 				},
 			},
 		},
@@ -114,4 +110,4 @@ const description_response_2 = {
 	outputContexts: [],
 };
 
-module.exports = { linkedlist_switch };
+export { linkedlist_switch };

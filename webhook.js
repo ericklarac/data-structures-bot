@@ -1,20 +1,22 @@
-'use strict';
+import express from 'express';
+import json from 'body-parser';
+import urlencoded from 'body-parser';
+import morgan from 'morgan';
+import cors from 'cors';
 
-const Restify = require('restify');
-const server = Restify.createServer({
-	name: 'DataStructuresBot',
-});
-const request = require('request');
-const { example, stack_switch } = require('./responses/stacks.js');
-const { queue_switch } = require('./responses/queue.js');
-const { linkedlist_switch } = require('./responses/linkedlist.js');
+import { example, stack_switch } from './responses/stacks.js';
+import { queue_switch } from './responses/queue.js';
+import { linkedlist_switch } from './responses/linkedlist.js';
+
+var app = express();
+app.use(express.static(process.cwd() + '/public'));
+app.use(cors());
+app.use(json());
+app.use(urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 
-server.use(Restify.plugins.bodyParser());
-server.use(Restify.plugins.jsonp());
-
 // POST route handler
-server.post('/', (req, res) => {
+app.post('/', (req, res) => {
 	let { queryResult } = req.body;
 	const { datastructure, selector } = queryResult.parameters;
 
@@ -50,6 +52,4 @@ server.post('/', (req, res) => {
 	});
 });
 
-server.listen(PORT, () =>
-	console.log(`Data Structures bot running on ${PORT}`)
-);
+app.listen(PORT, () => console.log(`Data Structures bot running on ${PORT}`));

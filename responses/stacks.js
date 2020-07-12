@@ -143,4 +143,4 @@ const example = (param) => {
 	};
 };
 
-module.exports = { example, stack_switch };
+export { example, stack_switch };
