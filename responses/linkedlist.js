@@ -1,4 +1,4 @@
-const linkedlist_switch = (datastructure, selector) => {
+const linkedlist_switch = (datastructure, selector, host) => {
 	switch (selector) {
 		case 'image':
 			return image_response;
@@ -8,6 +8,8 @@ const linkedlist_switch = (datastructure, selector) => {
 			return implementation_response;
 		case 'problems':
 			return problem_response;
+		case 'code':
+			return code_response(host);
 		case 'vulgarity':
 			return {
 				fulfillmentMessages: [
@@ -38,16 +40,13 @@ const problem_response = {
 				telegram: {
 					parse_mode: 'Markdown',
 					text:
-						'Here are some common queue problems from leetcode:\n\t- [Recent calls](https://leetcode.com/problems/number-of-recent-calls/) \n\t- [Design circular queue](https://leetcode.com/problems/design-circular-queue)',
+						'Here are some common linked list problems from leetcode:\n\t- [Recent calls](https://leetcode.com/problems/number-of-recent-calls/) \n\t- [Design circular queue](https://leetcode.com/problems/design-circular-queue)',
 				},
 			},
 		},
 	],
 	outputContexts: [],
 };
-
-const node =
-	'```python class ListNode:\n\tdef __init__(self, value):\n\t\tself.value = value\n\t\tself.next = None```';
 
 const implementation_response = {
 	fulfillmentMessages: [
@@ -56,12 +55,30 @@ const implementation_response = {
 			payload: {
 				telegram: {
 					parse_mode: 'Markdown',
-					text: '../public/linked-list-node.png',
+					text:
+						'```class ListNode:\n\t\t\t\tdef __init__(self, value):\n\t\t\t\t\t\t\t\tself.value = value\n\t\t\t\t\t\t\t\tself.next = None```',
 				},
 			},
 		},
 	],
 	outputContexts: [],
+};
+
+const code_response = (host) => {
+	return {
+		fulfillmentMessages: [
+			{
+				platform: 'TELEGRAM',
+				payload: {
+					telegram: {
+						parse_mode: 'Markdown',
+						text: host + '/linked-list-node.png',
+					},
+				},
+			},
+		],
+		outputContexts: [],
+	};
 };
 
 const opearation_response = {

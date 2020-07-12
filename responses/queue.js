@@ -1,4 +1,4 @@
-const queue_switch = (datastructure, selector) => {
+const queue_switch = (datastructure, selector, host) => {
 	switch (selector) {
 		case 'image':
 			return image_response;
@@ -8,6 +8,8 @@ const queue_switch = (datastructure, selector) => {
 			return implementation_response;
 		case 'problems':
 			return problem_response;
+		case 'code':
+			return code_response(host);
 		case 'vulgarity':
 			return {
 				fulfillmentMessages: [
@@ -28,6 +30,23 @@ const queue_switch = (datastructure, selector) => {
 				Math.floor(Math.random() * 2)
 			];
 	}
+};
+
+const code_response = (host) => {
+	return {
+		fulfillmentMessages: [
+			{
+				platform: 'TELEGRAM',
+				payload: {
+					telegram: {
+						parse_mode: 'Markdown',
+						text: host + '/queue.png',
+					},
+				},
+			},
+		],
+		outputContexts: [],
+	};
 };
 
 const problem_response = {

@@ -14,6 +14,7 @@ app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'https://data-structures-bot.herokuapp.com';
 
 // POST route handler
 app.post('/', (req, res) => {
@@ -27,11 +28,11 @@ app.post('/', (req, res) => {
 
 		switch (datastructure) {
 			case 'stack':
-				return res.send(stack_switch(datastructure, selector));
+				return res.send(stack_switch(datastructure, selector, HOST));
 			case 'graph':
 				return res.send(example(datastructure));
 			case 'queue':
-				return res.send(queue_switch(datastructure, selector));
+				return res.send(queue_switch(datastructure, selector, HOST));
 			case 'heap':
 				return res.send(example(datastructure));
 			case 'binary tree':
@@ -39,7 +40,7 @@ app.post('/', (req, res) => {
 			case 'trie':
 				return res.send(example(datastructure));
 			case 'linked list':
-				return res.send(linkedlist_switch(datastructure, selector));
+				return res.send(linkedlist_switch(datastructure, selector, HOST));
 			default:
 				return res.send({
 					fulfillmentText: 'What was that?',
