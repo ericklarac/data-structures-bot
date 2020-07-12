@@ -7,6 +7,7 @@ import cors from 'cors';
 import { example, stack_switch } from './responses/stacks.js';
 import { queue_switch } from './responses/queue.js';
 import { linkedlist_switch } from './responses/linkedlist.js';
+import { binarytree_switch } from './responses/binarytree.js';
 
 var app = express();
 app.use(express.static(process.cwd() + '/public'));
@@ -36,7 +37,7 @@ app.post('/', (req, res) => {
 			case 'heap':
 				return res.send(example(datastructure));
 			case 'binary tree':
-				return res.send(example(datastructure));
+				return res.send(binarytree_switch(datastructure, selector, HOST));
 			case 'trie':
 				return res.send(example(datastructure));
 			case 'linked list':

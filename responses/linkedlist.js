@@ -40,7 +40,7 @@ const problem_response = {
 				telegram: {
 					parse_mode: 'Markdown',
 					text:
-						'Here are some common linked list problems from leetcode:\n\t- [Recent calls](https://leetcode.com/problems/number-of-recent-calls/) \n\t- [Design circular queue](https://leetcode.com/problems/design-circular-queue)',
+						'Here are some common linked list problems from leetcode:\n\t- [Add two numbers](https://leetcode.com/problems/add-two-numbers) \n\t- [Merge two sorted lists](https://leetcode.com/problems/merge-two-sorted-lists) \n\t- [Merge k sorted lists](https://leetcode.com/problems/merge-k-sorted-lists)',
 				},
 			},
 		},
@@ -56,7 +56,7 @@ const implementation_response = {
 				telegram: {
 					parse_mode: 'Markdown',
 					text:
-						'```class ListNode:\n\t\t\t\tdef __init__(self, value):\n\t\t\t\t\t\t\t\tself.value = value\n\t\t\t\t\t\t\t\tself.next = None```',
+						'In _Python_ a *linked list* can be implemented using list nodes as in the following example:\n\n```python\nclass ListNode:\n\t\t\t\tdef __init__(self, value):\n\t\t\t\t\t\t\t\tself.value = value\n\t\t\t\t\t\t\t\tself.next = None```\n\n Then, each node points to the next node.',
 				},
 			},
 		},
