@@ -1,6 +1,6 @@
 # Data Structures Bot
 
-Bot for telegram created using dialog flow
+Bot for telegram created using dialog flow, deployed in heroku.
 
 ## Topics Covered
 
