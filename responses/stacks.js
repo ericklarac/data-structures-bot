@@ -72,7 +72,7 @@ const implementation_response = {
 				telegram: {
 					parse_mode: 'Markdown',
 					text:
-						'Stacks can be implemented using linked lists ant dynamic arrays: \n\n - *Linked list*: \n\t\t - *Enqueue*: Insert at head \n\t\t - *Dequeue*: Remove at head \n\n - *Dynamic Arrays*: \n\t\t - *Enqueue*: Append\n\t\t - *Dequeue*: Remove last element',
+						'Stacks can be implemented using linked lists ant dynamic arrays: \n\n - *Linked list*: \n\t\t - *Push*: Insert an head \n\t\t - *Pop*: Remove at head \n\n - *Dynamic Arrays*: \n\t\t - *Push*: Append\n\t\t - *Pop*: Remove last element',
 				},
 			},
 		},
