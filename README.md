@@ -27,4 +27,4 @@ You can change the word **stack** for any other data structure.
 - [Telegram Docs](https://core.telegram.org/bots/api#setchatphoto)
 - [Carbon image gen](https://carbon.now.sh/)
 
-### @ericklarac
+#### @ericklarac
